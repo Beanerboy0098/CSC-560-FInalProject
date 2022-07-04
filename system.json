@@ -1,0 +1,103 @@
+{
+    "System1": {
+        "Name": "Nintendo Entertainment System",
+	 "Architecture" : "8 bit",
+       "Release_Date" : "October 18, 1985",
+       "Launch_Titles" : 17,
+       "Media": "ROM cartridge",
+       "Type":   "Home video game console"
+    },
+    
+   "System2": {
+ "Name": "Super Nintendo Entertainment System", 
+ "Architecture" : "16 bit",
+       "Release_Date" : "August 23, 1991",
+        
+       "Launch_Titles" : 5,
+       "Media": "ROM cartridge",
+       "Type": "Home video game console"    },
+    
+  "System3"  : {
+   "Name": "Game Boy",
+   "Architecture" : "8 bit",
+        
+   "Release_Date" : "July 31, 1989", 
+       "Launch_Titles" : 5,
+       "Media": "Game Boy Game Pak",
+       "Type":  "Handheld game console"
+    },
+
+        "System4":{
+         "Name": "Nintendo 64", 
+         "Architecture" : " 64 bit",
+        "Release_Date" : "September 29, 1996",
+        
+       "Launch_Titles" : 2,
+       "Media": "Nintendo 64 Game Pak",
+       "Type":  "Home video game console" 
+    },
+
+"System5":{
+   "Name": "GameCube", 
+        "Release_Date" : " November 18, 2001",
+       "Launch_Titles" : 12,
+       "Media": "GameCube Game Disc",
+       "Type":  "Home video game console"
+    },
+	"System6":{
+         "Name": "Wii",
+        "Release_Date" : "November 19, 2006",
+       "Launch_Titles" : 1,
+       "Media": "Wii Optical Disc",
+       "Type":  "Home video game console" 
+    },
+	
+	"System7":{
+         "Name": "Virtual Boy",
+        "Release_Date" : "August 14, 1995",
+       "Launch_Titles" : 3,
+       "Media": "ROM cartridge",
+       "Type":  "Handheld video game console"
+    },
+
+"System8":{
+   "Name": "Game Boy Color",
+        "Release_Date" : "November 18, 1998",
+       "Launch_Titles" : 4,
+       "Media": "Game Boy Game Pak",
+       "Type":  "Handheld video game console"
+    },
+
+"System9":{
+   "Name":  "Game Boy Advance",
+        "Release_Date" : "June 11, 2001",
+       "Launch_Titles" : 14,
+       "Media": "Game Boy Advance Game Pak",
+       "Type":  "Handheld video game console"
+    },
+
+"System10":{
+   "Name": "Nintendo DS",
+        "Release_Date" : "November 21, 2004",
+       "Launch_Titles" : 6,
+       "Media": "Nintendo DS Game Card",
+       "Type":  "Handheld video game console"
+    },
+
+"System11":{
+   "Name": "Nintendo 3DS",
+        "Release_Date" : "March 27, 2011",
+       "Launch_Titles" : 13,
+       "Media": "Nintendo 3DS Game Card",
+       "Type": "Handheld video game console"
+    },
+
+"System12":{
+   "Name": " Wii U",
+        "Release_Date" : "November 18, 2012",
+       "Launch_Titles" : 8,
+       "Media": "Wii U Optical Disc",
+       "Type":  "Home video game console"
+    }
+ }
+
