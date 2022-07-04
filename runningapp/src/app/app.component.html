@@ -1,0 +1,465 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<style>
+  :host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 8px 0;
+  }
+  p {
+    margin: 0;
+  }
+  .spacer {
+    flex: 1;
+  }
+  .toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+  }
+  .toolbar img {
+    margin: 0 16px;
+  }
+  .toolbar #twitter-logo {
+    height: 40px;
+    margin: 0 8px;
+  }
+  .toolbar #youtube-logo {
+    height: 40px;
+    margin: 0 16px;
+  }
+  .toolbar #twitter-logo:hover,
+  .toolbar #youtube-logo:hover {
+    opacity: 0.8;
+  }
+  .content {
+    display: flex;
+    margin: 82px auto 32px;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+  }
+  svg.material-icons {
+    height: 24px;
+    width: auto;
+  }
+  svg.material-icons:not(:last-child) {
+    margin-right: 8px;
+  }
+  .card svg.material-icons path {
+    fill: #888;
+  }
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 16px;
+  }
+  .card {
+    all: unset;
+    border-radius: 4px;
+    border: 1px solid #eee;
+    background-color: #fafafa;
+    height: 40px;
+    width: 200px;
+    margin: 0 8px 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+  }
+  .card-container .card:not(:last-child) {
+    margin-right: 0;
+  }
+  .card.card-small {
+    height: 16px;
+    width: 168px;
+  }
+  .card-container .card:not(.highlight-card) {
+    cursor: pointer;
+  }
+  .card-container .card:not(.highlight-card):hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+  }
+  .card-container .card:not(.highlight-card):hover .material-icons path {
+    fill: rgb(105, 103, 103);
+  }
+  .card.highlight-card {
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+    border: none;
+    width: auto;
+    min-width: 30%;
+    position: relative;
+  }
+  .card.card.highlight-card span {
+    margin-left: 60px;
+  }
+  svg#rocket {
+    width: 80px;
+    position: absolute;
+    left: -10px;
+    top: -24px;
+  }
+  svg#rocket-smoke {
+    height: calc(100vh - 95px);
+    position: absolute;
+    top: 10px;
+    right: 180px;
+    z-index: -10;
+  }
+  a,
+  a:visited,
+  a:hover {
+    color: #1976d2;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #125699;
+  }
+  .terminal {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 6px;
+    padding-top: 45px;
+    margin-top: 8px;
+    overflow: hidden;
+    background-color: rgb(15, 15, 16);
+  }
+  .terminal::before {
+    content: "\2022 \2022 \2022";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: rgb(58, 58, 58);
+    color: #c2c3c4;
+    width: 100%;
+    font-size: 2rem;
+    line-height: 0;
+    padding: 14px 0;
+    text-indent: 4px;
+  }
+  .terminal pre {
+    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+    color: white;
+    padding: 0 1rem 1rem;
+    margin: 0;
+  }
+  .circle-link {
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    margin: 8px;
+    background-color: white;
+    border: 1px solid #eeeeee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: 1s ease-out;
+  }
+  .circle-link:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  }
+  footer {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    line-height: 20px;
+  }
+  footer a {
+    display: flex;
+    align-items: center;
+  }
+  .github-star-badge {
+    color: #24292e;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    padding: 3px 10px;
+    border: 1px solid rgba(27,31,35,.2);
+    border-radius: 3px;
+    background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);
+    margin-left: 4px;
+    font-weight: 600;
+  }
+  .github-star-badge:hover {
+    background-image: linear-gradient(-180deg,#f0f3f6,#e6ebf1 90%);
+    border-color: rgba(27,31,35,.35);
+    background-position: -.5em;
+  }
+  .github-star-badge .material-icons {
+    height: 16px;
+    width: 16px;
+    margin-right: 4px;
+  }
+  svg#clouds {
+    position: fixed;
+    bottom: -160px;
+    left: -230px;
+    z-index: -10;
+    width: 1920px;
+  }
+  /* Responsive Styles */
+  @media screen and (max-width: 767px) {
+    .card-container > *:not(.circle-link) ,
+    .terminal {
+      width: 100%;
+    }
+    .card:not(.highlight-card) {
+      height: 16px;
+      margin: 8px 0;
+    }
+    .card.highlight-card span {
+      margin-left: 72px;
+    }
+    svg#rocket-smoke {
+      right: 120px;
+      transform: rotate(-5deg);
+    }
+  }
+  @media screen and (max-width: 575px) {
+    svg#rocket-smoke {
+      display: none;
+      visibility: hidden;
+    }
+  }
+</style>
+
+
+<div class="content" role="main">
+  <!-- Highlight Card -->
+ <h1>Nintendo Video Games Systems database</h1>
+  <p>Enjoy a brief history tour of the various Consoles Nintendo has made over the years</p>
+  <h2> Add a System
+  </h2>
+  <p>Fill all the fields below and select "Add" to add a Consoles to the database.
+  </p>
+  
+  <div class ="row">
+    <div class="col-xl-12">
+      <body>
+        <div class="center">
+        <h3>New System
+        </h3>
+      </div>
+        <form (submit)="addsystem()" style="background-color: rgb(237, 41, 120); margin: 30px;">
+          <div style="margin: 10px;">
+            <label for="Name">System Name
+            </label>
+            <br>
+            <input type="text" [(ngModel)]="Name" name="name">
+            <br>
+          </div>
+          <div style="margin: 10px;">
+            <label for="Release_Date">Release Date
+            </label>
+            <br>
+            <input type="text" [(ngModel)]="Release_Date" name="Release_Date">
+            <br>
+          </div>
+          <div style="margin: 10px;">
+            <label for="Architecture">Architecture
+            </label>
+            <br>
+            <input type="text" [(ngModel)]="Architecture" name="Architecture">
+            <br>
+          </div>
+          <div style="margin: 10px;">
+            <label for="Launch_Titles">Launch Titles
+            </label>
+            <br>
+            <input type="number" [(ngModel)]="Launch_Titles" name="Launch_Titles">
+            <br>
+          </div>
+          <div style="margin: 10px;">
+            <label for="Media">Media
+            </label>
+            <br>
+            <input type="text" [(ngModel)]="Media" name="Media">
+            <br>
+          </div>
+          <div style="margin: 10px;">
+            <label for="Type">Type
+            </label>
+            <br>
+            <input type="text" [(ngModel)]="Type" name="Type">
+            <br>
+          </div>
+         
+          
+          <input type="submit" value = "Add">
+        </form>
+      </body>
+    </div>
+    
+  </div>
+
+
+
+
+
+  <div class="col-xl-12">
+    <h3 class="center">Buttons to change the consoles displayed</h3>
+   
+    <button (click)="getLowestLaunchTitle()">Get console that has the lowest number of Launch Titles</button>
+    <button (click)="getMostLaunchTitlesorder()">Ordering consoles from greatest to lowest in terms of launch titles</button>
+   
+    </div>
+  
+  <h2 class="center"> Systems
+  </h2>
+  <p>List of Nintendo Consoles
+  </p>
+  <p>*Subject to change based on what query button is selected</p>
+  
+    
+    
+      <div *ngFor="let Systems of System" style="margin:25px;" class="flex-container">
+        <div class="flex-child">
+          <body>
+          
+          <div class = "col-mid-3">
+            Name:     {{Systems.Name}}
+          </div>
+          <div class = "col-mid-3">
+            Release Date:     {{Systems.Release_Date}}
+          </div>
+
+          <div *ngIf= "Systems.Architecture != null; then trueBlock; else falseBlock"></div>
+          <ng-template #trueBlock>
+
+          <div class = "col-mid-3">
+            Architecture:    {{Systems.Architecture}}
+          </div>
+          <div class = "col-mid-3">
+            Launch Titles:     {{Systems.Launch_Titles}}
+          </div>
+          <div class = "col-mid-3">
+            Media:     {{Systems.Media}}
+          </div>
+          <div class = "col-mid-3">
+            Type:     {{Systems.Type}}
+          </div>
+          </ng-template>
+          <ng-template #falseBlock>
+            <div class = "col-mid-3">
+              Launch Titles:     {{Systems.Launch_Titles}}
+            </div>
+            <div class = "col-mid-3">
+              Media:     {{Systems.Media}}
+            </div>
+            <div class = "col-mid-3">
+              Type:     {{Systems.Type}}
+            </div>
+
+          </ng-template>
+          <input type="button" (click) = "deletesystem(Systems._id)"  value="DELETE"> 
+        </body>
+      </div>
+        
+      <div class="flex-child">
+        <body>
+          
+          <form (submit) = "Updatedsystem(Systems._id)" style="background-color: lightblue; margin: 30px;">
+            <div style="margin: 10px;">
+              <label for="Name">Full Name</label><br>
+              <input type="text" [(ngModel)]="Name" name="Name"><br>
+            </div>
+            
+            <div style="margin: 10px;">
+              <label for="Release_Date">Release Date
+              </label>
+              <br>
+              <input type="text" [(ngModel)]="Release_Date" name="Release_Date">
+              <br>
+            </div>
+            <div style="margin: 10px;">
+              <label for="Architecture">Architecture
+              </label>
+              <br>
+              <input type="text" [(ngModel)]="Architecture" name="Architecture">
+              <br>
+            </div>
+            <div style="margin: 10px;">
+              <label for="Launch_Titles">Launch Titles
+              </label>
+              <br>
+              <input type="number" [(ngModel)]="Launch_Titles" name="Launch_Titles">
+              <br>
+            </div>
+            <div style="margin: 10px;">
+              <label for="Media">Media
+              </label>
+              <br>
+              <input type="text" [(ngModel)]="Media" name="Media">
+              <br>
+            </div>
+            <div style="margin: 10px;">
+              <label for="Type">Type
+              </label>
+              <br>
+              <input type="text" [(ngModel)]="Type" name="Type">
+              <br>
+            </div>
+  
+            <input type="submit" value = "Edit">
+     
+    
+        
+ 
+   
+
+          </form>
+      </body>
+    </div>
+    </div>
+    </div>
+   
+  
+ 
+
+ 
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<router-outlet>
+</router-outlet>
